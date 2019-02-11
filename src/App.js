@@ -42,7 +42,8 @@ class App extends Component {
         headers: {
           'Content-Type': 'application/json',
         }
-      });
+      }
+    );
     const jsonResponse = await response.json(); //extract JSON from the http response
     let displayData = jsonResponse['DISPLAY'] || {};
     const priceData = Object.keys(displayData).map((key, index) => {
