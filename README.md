@@ -12,8 +12,8 @@ const config = {
 };
 ```
 
-6. run: npm install inside the project directory
-7. run: npm start
+6. run 'npm install' inside the project directory
+7. run 'npm start'
 8. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Have fun!
