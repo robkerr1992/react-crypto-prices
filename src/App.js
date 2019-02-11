@@ -10,15 +10,15 @@ class App extends Component {
       searchTerms: null,
       priceData: [],
       apkiKey: '228ef4fe3191079e9bf60b75b834bd284ac7d9e186df5a579269d04bf83dd5e7',
-      baseMultipriceURL : 'https://min-api.cryptocompare.com/data/pricemulti?',
+      baseMultipriceURL : 'https://min-api.cryptocompare.com/data/pricemultifull?',
     }
   }
 
   componentDidMount() {
     this.timerId = setInterval(
       () => this.refreshData(),
-      5000
-      // 30000
+      // 5000
+      30000
     )
     this.refreshData();
   }
@@ -41,12 +41,18 @@ class App extends Component {
         }
       });
     const jsonResponse = await response.json(); //extract JSON from the http response
-    const priceData = Object.keys(jsonResponse).map((key, index) => {
-      console.log(key);
-      console.log(jsonResponse[key]);
-      return {name: key, usd: jsonResponse[key]['USD']}
+    let displayData = jsonResponse['DISPLAY'] || {};
+    const priceData = Object.keys(displayData).map((key, index) => {
+      const specificToken = displayData[key]['USD'];
+      console.log(specificToken);
+      return {
+        name: key,
+        usd: specificToken['PRICE'],
+        twentyfourhourChange: specificToken['CHANGE24HOUR'],
+        dayHigh: specificToken['HIGHDAY'],
+        imageURL: specificToken['IMAGEURL'],
+      }
     })
-    console.log(priceData);
     this.setState({
       priceData: priceData
     });
