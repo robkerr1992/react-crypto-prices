@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Dashboard from './Dashboard';
+import CryptoDashboard from './CryptoDashboard';
 import Config from './.config.js'
 
 class App extends Component {
@@ -17,8 +17,7 @@ class App extends Component {
   componentDidMount() {
     this.timerId = setInterval(
       () => this.refreshData(),
-      // 5000
-      30000
+      10000
     )
     this.refreshData();
   }
@@ -50,11 +49,14 @@ class App extends Component {
       const specificToken = displayData[key]['USD'];
       console.log(specificToken);
       return {
+        imageURL: specificToken['IMAGEURL'],
         name: key,
         usd: specificToken['PRICE'],
-        twentyfourhourChange: specificToken['CHANGE24HOUR'],
+        change24Hour: specificToken['CHANGE24HOUR'],
         dayHigh: specificToken['HIGHDAY'],
-        imageURL: specificToken['IMAGEURL'],
+        marketCap: specificToken['MKTCAP'],
+        volume24Hour: specificToken['TOTALVOLUME24HTO'],
+        supply: specificToken['SUPPLY'],
       }
     })
     this.setState({
@@ -66,7 +68,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <Dashboard priceData={this.state.priceData} />
+        <CryptoDashboard priceData={this.state.priceData} />
         </header>
       </div>
     );
