@@ -47,15 +47,15 @@ class App extends Component {
     let displayData = jsonResponse['DISPLAY'] || {};
     const priceData = Object.keys(displayData).map((key, index) => {
       const specificToken = displayData[key]['USD'];
-      console.log(specificToken);
+      // console.log(specificToken);
       return {
         imageURL: specificToken['IMAGEURL'],
         name: key,
         usd: specificToken['PRICE'],
-        change24Hour: specificToken['CHANGE24HOUR'],
         dayHigh: specificToken['HIGHDAY'],
-        marketCap: specificToken['MKTCAP'],
+        change24Hour: specificToken['CHANGE24HOUR'],
         volume24Hour: specificToken['TOTALVOLUME24HTO'],
+        marketCap: specificToken['MKTCAP'],
         supply: specificToken['SUPPLY'],
       }
     })
