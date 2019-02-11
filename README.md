@@ -6,9 +6,11 @@ To run this project locally you will need to do a few things:
 4. Create a file called .config.js and place it in the src/ directory
 5. Add this code to that file:
 
+```
 const config = {
     apkiKey: 'your api key goes here (don't forget the quotes!)',
 };
+```
 
 6. run: npm install inside the project directory
 7. run: npm start
