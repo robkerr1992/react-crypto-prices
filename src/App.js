@@ -18,7 +18,7 @@ class App extends Component {
     this.timerId = setInterval(
       () => this.refreshData(),
       10000
-    )
+    );
     this.refreshData();
   }
 
@@ -58,7 +58,7 @@ class App extends Component {
         marketCap: specificToken['MKTCAP'],
         supply: specificToken['SUPPLY'],
       }
-    })
+    });
     this.setState({
       priceData: priceData
     });
@@ -66,10 +66,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="dashboard-frame">
         <CryptoDashboard priceData={this.state.priceData} />
-        </header>
       </div>
     );
   }

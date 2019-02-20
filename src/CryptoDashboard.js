@@ -19,7 +19,7 @@ class Row extends Component {
 
 function TokenImage(props) {
     return (
-        <td>
+        <td className="img-slot">
             <img className="token-image" src={'https://cryptocompare.com' + props.url} alt={props.name + ' Token Image'} />
         </td>
     );
@@ -37,7 +37,7 @@ class CryptoDashboard extends Component {
     }
     render() { //first <th> is image
         return (
-            <table>
+            <table className="darkTable">
                 <thead>
                     <tr>
                         <th></th>
