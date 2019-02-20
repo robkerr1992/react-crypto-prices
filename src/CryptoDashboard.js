@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
 class Row extends Component {
-    buildtokenData() {
+    buildTokenData() {
         const token = this.props.token;
-        const row = Object.keys(token).map((key, index) => {
+        return Object.keys(token).map((key, index) => {
             return key === 'imageURL' ? <TokenImage url={token[key]} name={token.name} /> : <TokenData data={token[key]} />;
         });
-        return row;
     }
     render() {
         return (
             <tr key={this.props.token.name} className="row">
-                {this.buildtokenData()}
+                {this.buildTokenData()}
             </tr>
         )
     }
@@ -35,13 +34,13 @@ class CryptoDashboard extends Component {
             return <Row token={element} />;
         });
     }
-    render() { //first <th> is image
+    render() {
         return (
-            <table className="darkTable">
+            <table className="dashboard-table">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Symbol</th>
+                        <th>Short Code</th>
                         <th>Price</th>
                         <th>Daily High</th>
                         <th>24 Hr Change</th>

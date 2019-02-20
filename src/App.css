@@ -1,4 +1,4 @@
-table.darkTable {
+table.dashboard-table {
   font-family: "Arial Black", Gadget, sans-serif;
   border: 2px solid #000000;
   background-color: #4A4A4A;
@@ -9,33 +9,33 @@ table.darkTable {
   /*justify-content: center;*/
   /*justify-items: center;*/
 }
-table.darkTable td, table.darkTable th {
+table.dashboard-table td, table.dashboard-table th {
   border: 1px solid #2E2E2E;
   padding: 3px 2px;
 }
-table.darkTable tbody td {
+table.dashboard-table tbody td {
   font-size: 13px;
   color: #E6E6E6;
 }
-table.darkTable tr:nth-child(even) {
+table.dashboard-table tr:nth-child(even) {
   background: #888888;
 }
-table.darkTable thead {
+table.dashboard-table thead {
   background: #000000;
   border-bottom: 3px solid #000000;
 }
-table.darkTable thead th {
+table.dashboard-table thead th {
   font-size: 15px;
   font-weight: bold;
   color: #E6E6E6;
   text-align: center;
   border-left: 2px solid #4A4A4A;
 }
-table.darkTable thead th:first-child {
+table.dashboard-table thead th:first-child {
   border-left: none;
 }
 
-table.darkTable tfoot {
+table.dashboard-table tfoot {
   font-size: 12px;
   font-weight: bold;
   color: #E6E6E6;
@@ -45,7 +45,7 @@ table.darkTable tfoot {
   background: linear-gradient(to bottom, #404040 0%, #191919 66%, #000000 100%);
   border-top: 1px solid #4A4A4A;
 }
-table.darkTable tfoot td {
+table.dashboard-table tfoot td {
   font-size: 12px;
 }
 
